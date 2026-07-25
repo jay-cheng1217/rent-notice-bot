@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-07-25T00:00:00Z",
+  "updated_at": "2026-07-25T10:00:00Z",
   "queries": [
-    { "sig": "1|9|0|20000_25000", "region_id": 1, "section_id": 9, "kind_id": 0, "price": "20000_25000" }
+    { "sig": "1|1,9|0|18000_26000", "region_id": 1, "section_id": "1,9", "kind_id": 0, "price": "18000_26000" }
   ]
 }
