@@ -73,7 +73,11 @@ jobs:
                     address: .address, area_name: .area_name,
                     floor_name: .floor_name, layout: .layoutStr,
                     refresh_time: .refresh_time,
-                    photo: ((.photoList // []) | map(select(test("/house/"))) + . | .[0] // ""),
+                    photos: ((.photoList // []) as $p
+                             | (if ($p | map(select(test("/house/"))) | length) > 0
+                                then ($p | map(select(test("/house/"))))
+                                else $p end)
+                             | .[0:6]),
                     url: (.url // ("https://rent.591.com.tw/" + (.id|tostring)))
                   }
                 ]' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
