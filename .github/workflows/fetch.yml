@@ -137,7 +137,7 @@ jobs:
 
           mv /tmp/out.json data/listings.json
           echo "--- 摘要 ---"
-          jq '{generated_at, 細節: (.results|map_values(length)), 全部id: (.ids|map_values(length)), stale}' data/listings.json
+          jq '{generated_at, detail_counts: (.results|map_values(length)), id_counts: (.ids|map_values(length)), stale}' data/listings.json
           echo "檔案大小: $(wc -c < data/listings.json) bytes(GitHub Contents API 上限 1048576)"
           if [ "$(wc -c < data/listings.json)" -gt 900000 ]; then
             echo "⚠️ 接近 1 MB 上限,請調低 DETAIL_KEEP 或減少查詢組數"
