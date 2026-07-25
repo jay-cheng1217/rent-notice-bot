@@ -32,6 +32,8 @@ jobs:
       - name: 抓取 591
         run: |
           set -uo pipefail
+          PAGE_SIZE=30          # 591 每頁固定 30 筆
+          MAX_PAGES=5           # 上限 150 筆/查詢;超出會在 log 明確標示,不靜默截斷
           mkdir -p data
           [ -f data/listings.json ] || echo '{"results":{}}' > data/listings.json
           if [ ! -f config/filters.json ]; then
@@ -50,26 +52,33 @@ jobs:
             kind=$(echo "$q"    | jq -r '.kind_id // 0')
             price=$(echo "$q"   | jq -r '.price // ""')
 
-            ok=0
-            # 最多 3 次,間隔遞增;同一次 run 內 IP 固定,重試針對的是暫時性限流
-            for attempt in 1 2 3; do
-              url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
-              [ -n "$section" ] && url="${url}&sectionid=${section}"
-              [ "$kind" != "0" ]    && url="${url}&kind=${kind}"
-              [ -n "$price" ]       && url="${url}&rentprice=${price}"
+            # 逐頁抓完整清單。只抓第一頁會讓基準不完整:未被涵蓋的舊物件
+            # 一旦被房東刷新擠進前 30 名,就會被誤判為「新上架」而誤推。
+            ok=1
+            page=0
+            echo '[]' > /tmp/acc.json
+            while [ "$page" -lt "$MAX_PAGES" ]; do
+              first=$((page * PAGE_SIZE))
+              got=0
+              # 最多 3 次,間隔遞增;重試針對的是暫時性限流
+              for attempt in 1 2 3; do
+                url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
+                [ -n "$section" ]  && url="${url}&sectionid=${section}"
+                [ "$kind" != "0" ] && url="${url}&kind=${kind}"
+                [ -n "$price" ]    && url="${url}&rentprice=${price}"
+                [ "$first" != "0" ] && url="${url}&firstRow=${first}"
 
-              code=$(curl -s -o /tmp/resp.json -w '%{http_code}' --max-time 30 "$url" || echo 000)
-              echo "query ${sig} 第 ${attempt} 次 -> HTTP ${code}"
-              if [ "$code" = "200" ] && jq -e '.data.items' /tmp/resp.json >/dev/null 2>&1; then
-                ok=1; break
-              fi
-              [ "$attempt" != "3" ] && sleep $((attempt * 20))
-            done
+                code=$(curl -s -o /tmp/resp.json -w '%{http_code}' --max-time 30 "$url" || echo 000)
+                echo "query ${sig} 第 $((page+1)) 頁 第 ${attempt} 次 -> HTTP ${code}"
+                if [ "$code" = "200" ] && jq -e '.data.items' /tmp/resp.json >/dev/null 2>&1; then
+                  got=1; break
+                fi
+                [ "$attempt" != "3" ] && sleep $((attempt * 20))
+              done
 
-            if [ "$ok" = "1" ]; then
-              jq --arg sig "$sig" --slurpfile resp /tmp/resp.json '
-                .results[$sig] = [
-                  ($resp[0].data.items // [])[] | {
+              if [ "$got" != "1" ]; then ok=0; break; fi
+
+              jq '[ (.data.items // [])[] | {
                     id: (.id|tostring), title: .title, price: .price,
                     price_unit: .price_unit, kind_name: .kind_name,
                     address: .address, area_name: .area_name,
@@ -81,8 +90,24 @@ jobs:
                                 else $p end)
                              | .[0:6]),
                     url: (.url // ("https://rent.591.com.tw/" + (.id|tostring)))
-                  }
-                ]' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
+                  } ]' /tmp/resp.json > /tmp/page.json
+              jq -s 'add | unique_by(.id)' /tmp/acc.json /tmp/page.json > /tmp/acc2.json && mv /tmp/acc2.json /tmp/acc.json
+
+              cnt=$(jq 'length' /tmp/page.json)
+              total=$(jq -r '.data.total // 0' /tmp/resp.json)
+              [ "$cnt" -lt "$PAGE_SIZE" ] && break
+              page=$((page + 1))
+              # 未抓完就達到頁數上限時明確記錄,不靜默截斷
+              if [ "$page" -ge "$MAX_PAGES" ]; then
+                echo "⚠️ query ${sig} 達頁數上限 ${MAX_PAGES}(共 ${total} 筆),其餘未納入"
+              fi
+              sleep 3
+            done
+
+            if [ "$ok" = "1" ]; then
+              echo "query ${sig} 共取得 $(jq 'length' /tmp/acc.json) 筆"
+              jq --arg sig "$sig" --slurpfile acc /tmp/acc.json \
+                '.results[$sig] = $acc[0]' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
             else
               # 失敗:沿用上一份好資料並標記為 stale,絕不用空資料覆寫
               echo "query ${sig} 三次皆失敗,沿用前次資料"
