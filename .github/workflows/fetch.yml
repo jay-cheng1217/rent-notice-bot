@@ -32,8 +32,14 @@ jobs:
       - name: 抓取 591
         run: |
           set -uo pipefail
-          PAGE_SIZE=30          # 591 每頁固定 30 筆
-          MAX_PAGES=5           # 上限 150 筆/查詢;超出會在 log 明確標示,不靜默截斷
+          PAGE_SIZE=30          # 591 每頁固定 30 筆(實測值;仍以實際回傳筆數與 total 為準)
+          MAX_PAGES=20          # 上限 600 筆/查詢,足以涵蓋單一條件的全部物件
+          DETAIL_KEEP=60        # 只保留最新 60 筆的完整資料;其餘僅存 id
+          #
+          # 為何分開存:通知只需要「新物件」的細節,而新物件必定排在最前面;
+          # 但「已看過」的基準需要涵蓋全部物件,否則舊物件被刷新擠上來會被誤判為新。
+          # id 每筆約 10 bytes,完整存無壓力;細節每筆約 700 bytes,只留前段可避免
+          # listings.json 超過 GitHub Contents API 的 1 MB 上限(超過會讀不到而靜默停擺)。
           mkdir -p data
           [ -f data/listings.json ] || echo '{"results":{}}' > data/listings.json
           if [ ! -f config/filters.json ]; then
@@ -41,7 +47,7 @@ jobs:
           fi
 
           PREV=data/listings.json
-          echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","results":{},"stale":{}}' > /tmp/out.json
+          echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","results":{},"ids":{},"stale":{}}' > /tmp/out.json
 
           jq -c '.queries[]' config/filters.json | while read -r q; do
             sig=$(echo "$q"     | jq -r '.sig')
@@ -91,28 +97,38 @@ jobs:
                              | .[0:6]),
                     url: (.url // ("https://rent.591.com.tw/" + (.id|tostring)))
                   } ]' /tmp/resp.json > /tmp/page.json
-              jq -s 'add | unique_by(.id)' /tmp/acc.json /tmp/page.json > /tmp/acc2.json && mv /tmp/acc2.json /tmp/acc.json
+              # 保序去重:jq 的 unique_by 會排序,會破壞 591 的「新到舊」順序,
+              # 導致最新物件被排到後面(照片卡片給了最舊的幾筆)。改用 reduce 保序。
+              jq -s 'add | reduce .[] as $x ([]; if any(.[]; .id == $x.id) then . else . + [$x] end)' \
+                /tmp/acc.json /tmp/page.json > /tmp/acc2.json && mv /tmp/acc2.json /tmp/acc.json
 
               cnt=$(jq 'length' /tmp/page.json)
               total=$(jq -r '.data.total // 0' /tmp/resp.json)
+              have=$(jq 'length' /tmp/acc.json)
+              # 三個停止條件:本頁未滿、已取滿 total、達頁數上限
               [ "$cnt" -lt "$PAGE_SIZE" ] && break
+              [ "$total" != "0" ] && [ "$have" -ge "$total" ] && break
               page=$((page + 1))
-              # 未抓完就達到頁數上限時明確記錄,不靜默截斷
               if [ "$page" -ge "$MAX_PAGES" ]; then
-                echo "⚠️ query ${sig} 達頁數上限 ${MAX_PAGES}(共 ${total} 筆),其餘未納入"
+                echo "⚠️ query ${sig} 達頁數上限 ${MAX_PAGES}(已取 ${have} / 共 ${total} 筆),其餘未納入"
+                break
               fi
               sleep 3
             done
 
             if [ "$ok" = "1" ]; then
-              echo "query ${sig} 共取得 $(jq 'length' /tmp/acc.json) 筆"
-              jq --arg sig "$sig" --slurpfile acc /tmp/acc.json \
-                '.results[$sig] = $acc[0]' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
+              have=$(jq 'length' /tmp/acc.json)
+              echo "query ${sig} 共取得 ${have} 筆(細節保留前 ${DETAIL_KEEP} 筆)"
+              jq --arg sig "$sig" --argjson keep "$DETAIL_KEEP" --slurpfile acc /tmp/acc.json '
+                .results[$sig] = ($acc[0][0:$keep])
+                | .ids[$sig]   = ($acc[0] | map(.id))
+              ' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
             else
               # 失敗:沿用上一份好資料並標記為 stale,絕不用空資料覆寫
-              echo "query ${sig} 三次皆失敗,沿用前次資料"
+              echo "query ${sig} 抓取中斷,沿用前次資料"
               jq --arg sig "$sig" --slurpfile prev "$PREV" '
                 .results[$sig] = ($prev[0].results[$sig] // [])
+                | .ids[$sig]   = ($prev[0].ids[$sig] // [])
                 | .stale[$sig] = true
               ' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
             fi
@@ -121,7 +137,11 @@ jobs:
 
           mv /tmp/out.json data/listings.json
           echo "--- 摘要 ---"
-          jq '{generated_at, counts: (.results|map_values(length)), stale}' data/listings.json
+          jq '{generated_at, 細節: (.results|map_values(length)), 全部id: (.ids|map_values(length)), stale}' data/listings.json
+          echo "檔案大小: $(wc -c < data/listings.json) bytes(GitHub Contents API 上限 1048576)"
+          if [ "$(wc -c < data/listings.json)" -gt 900000 ]; then
+            echo "⚠️ 接近 1 MB 上限,請調低 DETAIL_KEEP 或減少查詢組數"
+          fi
 
       - name: 提交結果
         run: |
