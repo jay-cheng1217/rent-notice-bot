@@ -1,16 +1,20 @@
 name: fetch-591
 
-# 每 15 分鐘讀 config/filters.json,對 591 抓取各組查詢條件的物件,
-# 結果寫入 data/listings.json 供 GAS 端讀取。
+# 依 config/filters.json 抓 591,結果寫入 data/listings.json 供 GAS 讀取。
 #
-# 為何在 GitHub Actions 抓:591 以 UA 字串封鎖 Google Apps Script(GAS 無法改 UA),
-# 但一般客戶端正常回 200。本環境用 curl 預設 UA 即可,**不需任何繞過機制**。
-# (實測 2026-07-25:預設 UA 200 / GAS UA 403,見 ARCHITECTURE v2.0)
+# 為何在 GitHub Actions 抓:591 以 UA 字串封鎖 Google Apps Script,而 GAS 無法
+# 覆寫 UA(Google 限制)。本環境用 curl 預設 UA 即可,**不需任何繞過機制**。
+#
+# 排程策略:GitHub 的 cron 常延遲或跳過(實測 4 小時只觸發 1 次),故主要由 GAS
+# 每 15 分鐘以 workflow_dispatch 準時觸發;下方 cron 僅作為備援。
+#
+# 間歇性 403:591 會對資料中心流量偶發限流(實測約 6 成成功)。對策為重試 +
+# 失敗時保留上一份好資料 —— 物件會在站上停留數日,晚一輪抓到不會漏,只會延遲。
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
-  workflow_dispatch:        # GAS 可於使用者改條件時立即觸發
+    - cron: '*/30 * * * *'     # 備援;主要觸發來自 GAS
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -27,32 +31,40 @@ jobs:
 
       - name: 抓取 591
         run: |
-          set -euo pipefail
+          set -uo pipefail
           mkdir -p data
+          [ -f data/listings.json ] || echo '{"results":{}}' > data/listings.json
           if [ ! -f config/filters.json ]; then
-            echo "尚無 config/filters.json,略過"
-            exit 0
+            echo "尚無 config/filters.json,略過"; exit 0
           fi
 
-          echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","results":{}}' > /tmp/out.json
+          PREV=data/listings.json
+          echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","results":{},"stale":{}}' > /tmp/out.json
 
-          # 逐組查詢;每組之間間隔 3 秒,維持低頻
           jq -c '.queries[]' config/filters.json | while read -r q; do
-            sig=$(echo "$q"        | jq -r '.sig')
-            region=$(echo "$q"     | jq -r '.region_id')
-            section=$(echo "$q"    | jq -r '.section_id // 0')
-            kind=$(echo "$q"       | jq -r '.kind_id // 0')
-            price=$(echo "$q"      | jq -r '.price // ""')
+            sig=$(echo "$q"     | jq -r '.sig')
+            region=$(echo "$q"  | jq -r '.region_id')
+            section=$(echo "$q" | jq -r '.section_id // 0')
+            kind=$(echo "$q"    | jq -r '.kind_id // 0')
+            price=$(echo "$q"   | jq -r '.price // ""')
 
-            url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
-            [ "$section" != "0" ] && url="${url}&sectionid=${section}"
-            [ "$kind" != "0" ]    && url="${url}&kind=${kind}"
-            [ -n "$price" ]       && url="${url}&rentprice=${price}"
+            ok=0
+            # 最多 3 次,間隔遞增;同一次 run 內 IP 固定,重試針對的是暫時性限流
+            for attempt in 1 2 3; do
+              url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
+              [ "$section" != "0" ] && url="${url}&sectionid=${section}"
+              [ "$kind" != "0" ]    && url="${url}&kind=${kind}"
+              [ -n "$price" ]       && url="${url}&rentprice=${price}"
 
-            code=$(curl -s -o /tmp/resp.json -w '%{http_code}' "$url" || echo 000)
-            echo "query ${sig} -> HTTP ${code}"
+              code=$(curl -s -o /tmp/resp.json -w '%{http_code}' --max-time 30 "$url" || echo 000)
+              echo "query ${sig} 第 ${attempt} 次 -> HTTP ${code}"
+              if [ "$code" = "200" ] && jq -e '.data.items' /tmp/resp.json >/dev/null 2>&1; then
+                ok=1; break
+              fi
+              [ "$attempt" != "3" ] && sleep $((attempt * 20))
+            done
 
-            if [ "$code" = "200" ]; then
+            if [ "$ok" = "1" ]; then
               jq --arg sig "$sig" --slurpfile resp /tmp/resp.json '
                 .results[$sig] = [
                   ($resp[0].data.items // [])[] | {
@@ -62,17 +74,21 @@ jobs:
                     floor_name: .floor_name, layout: .layoutStr,
                     url: (.url // ("https://rent.591.com.tw/" + (.id|tostring)))
                   }
-                ]' /tmp/out.json > /tmp/out2.json && mv /tmp/out2.json /tmp/out.json
+                ]' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
             else
-              # 失敗不覆寫該組資料,讓 GAS 端看得出這輪沒更新
-              jq --arg sig "$sig" '.errors[$sig] = "HTTP '"$code"'"' /tmp/out.json > /tmp/out2.json && mv /tmp/out2.json /tmp/out.json
+              # 失敗:沿用上一份好資料並標記為 stale,絕不用空資料覆寫
+              echo "query ${sig} 三次皆失敗,沿用前次資料"
+              jq --arg sig "$sig" --slurpfile prev "$PREV" '
+                .results[$sig] = ($prev[0].results[$sig] // [])
+                | .stale[$sig] = true
+              ' /tmp/out.json > /tmp/o2.json && mv /tmp/o2.json /tmp/out.json
             fi
             sleep 3
           done
 
           mv /tmp/out.json data/listings.json
           echo "--- 摘要 ---"
-          jq '{generated_at, queries: (.results|keys), counts: (.results|map_values(length)), errors}' data/listings.json
+          jq '{generated_at, counts: (.results|map_values(length)), stale}' data/listings.json
 
       - name: 提交結果
         run: |
