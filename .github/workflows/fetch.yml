@@ -151,7 +151,19 @@ jobs:
           git add data/listings.json
           if git diff --staged --quiet; then
             echo "無變動"
-          else
-            git commit -m "data: 更新 591 物件快照 [skip ci]"
-            git push
+            exit 0
           fi
+          git commit -m "data: 更新 591 物件快照 [skip ci]"
+
+          # 兩個 run 可能同時完成(GAS dispatch 與 cron),直接 push 會被拒絕而
+          # 丟掉整輪資料。改為拉取後重試;衝突時以本輪(較新)的快照為準。
+          for i in 1 2 3; do
+            if git push; then echo "推送成功"; exit 0; fi
+            echo "推送被拒(第 ${i} 次),拉取後重試"
+            git fetch origin master
+            git checkout --ours data/listings.json 2>/dev/null || true
+            git rebase -X ours origin/master || { git rebase --abort || true; git reset --hard origin/master; exit 1; }
+            sleep $((i * 3))
+          done
+          echo "::error::推送三次皆失敗"
+          exit 1
