@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T04:44:08Z",
+  "generated_at": "2026-07-25T07:05:23Z",
   "results": {
     "1|9|0|20000_25000": [
       {
@@ -39,6 +39,18 @@
         "url": "https://rent.591.com.tw/21565255"
       },
       {
+        "id": "21616254",
+        "title": "捷運明德站共生宅電梯大套房新裝潢傢俱全包網路可短租可炊可租補",
+        "price": "20,000",
+        "price_unit": "元/月",
+        "kind_name": "分租套房",
+        "address": "北投區-文林北路",
+        "area_name": "10坪",
+        "floor_name": "5F/12F",
+        "layout": "",
+        "url": "https://rent.591.com.tw/21616254"
+      },
+      {
         "id": "21654449",
         "title": "奇岩捷運400公尺電梯大套房",
         "price": "22,500",
@@ -49,6 +61,18 @@
         "floor_name": "3F/6F",
         "layout": "",
         "url": "https://rent.591.com.tw/21654449"
+      },
+      {
+        "id": "21464204",
+        "title": "林泉公園【優質１＋１房２廳】可補助★養寵物★警衛管理",
+        "price": "21,000",
+        "price_unit": "元/月",
+        "kind_name": "整層住家",
+        "address": "北投區-溫泉路",
+        "area_name": "19坪",
+        "floor_name": "4F/5F",
+        "layout": "1房2廳",
+        "url": "https://rent.591.com.tw/21464204"
       },
       {
         "id": "21683157",
@@ -87,28 +111,40 @@
         "url": "https://rent.591.com.tw/21673593"
       },
       {
-        "id": "21464204",
-        "title": "林泉公園【優質１＋１房２廳】可補助★養寵物★警衛管理",
-        "price": "21,000",
-        "price_unit": "元/月",
-        "kind_name": "整層住家",
-        "address": "北投區-溫泉路",
-        "area_name": "19坪",
-        "floor_name": "4F/5F",
-        "layout": "1房2廳",
-        "url": "https://rent.591.com.tw/21464204"
-      },
-      {
-        "id": "21616254",
-        "title": "捷運明德站共生宅電梯大套房新裝潢傢俱全包網路可短租可炊可租補",
-        "price": "20,000",
+        "id": "21654467",
+        "title": "奇岩捷運400公尺電梯大套房",
+        "price": "21,500",
         "price_unit": "元/月",
         "kind_name": "分租套房",
-        "address": "北投區-文林北路",
-        "area_name": "10坪",
-        "floor_name": "5F/12F",
+        "address": "北投區-中央南路二段",
+        "area_name": "19坪",
+        "floor_name": "3F/6F",
         "layout": "",
-        "url": "https://rent.591.com.tw/21616254"
+        "url": "https://rent.591.com.tw/21654467"
+      },
+      {
+        "id": "21601911",
+        "title": "🍍北投捷運雅寓3房🍍我承辦",
+        "price": "25,000",
+        "price_unit": "元/月",
+        "kind_name": "整層住家",
+        "address": "北投區-中央北路二段",
+        "area_name": "26.2坪",
+        "floor_name": "4F/5F",
+        "layout": "3房2廳",
+        "url": "https://rent.591.com.tw/21601911"
+      },
+      {
+        "id": "21702708",
+        "title": "石牌站~優質景觀~明亮大窗~一卡皮箱即住~衛浴開窗",
+        "price": "24,500",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-承德路七段198巷1號",
+        "area_name": "14.2坪",
+        "floor_name": "4F/4F",
+        "layout": "",
+        "url": "https://rent.591.com.tw/21702708"
       },
       {
         "id": "21622657",
@@ -219,18 +255,6 @@
         "url": "https://rent.591.com.tw/21482573"
       },
       {
-        "id": "21601911",
-        "title": "🍍北投捷運雅寓3房🍍我承辦",
-        "price": "25,000",
-        "price_unit": "元/月",
-        "kind_name": "整層住家",
-        "address": "北投區-中央北路二段",
-        "area_name": "26.2坪",
-        "floor_name": "4F/5F",
-        "layout": "3房2廳",
-        "url": "https://rent.591.com.tw/21601911"
-      },
-      {
         "id": "21627245",
         "title": "石牌-短租出租屋-近唭哩岸捷運站",
         "price": "20,000",
@@ -337,30 +361,6 @@
         "floor_name": "6F/7F",
         "layout": "1房1廳",
         "url": "https://rent.591.com.tw/21673178"
-      },
-      {
-        "id": "21574564",
-        "title": "🌈捷運溫馨明亮方正二房🌈",
-        "price": "21,800",
-        "price_unit": "元/月",
-        "kind_name": "整層住家",
-        "address": "北投區-大同街125巷43弄",
-        "area_name": "17坪",
-        "floor_name": "頂樓加蓋/4F",
-        "layout": "2房1廳",
-        "url": "https://rent.591.com.tw/21574564"
-      },
-      {
-        "id": "21560226",
-        "title": "🏆老斌推薦🏆雅典大樓綠景電梯一房裝潢新",
-        "price": "24,000",
-        "price_unit": "元/月",
-        "kind_name": "整層住家",
-        "address": "北投區-中山路",
-        "area_name": "13坪",
-        "floor_name": "6F/7F",
-        "layout": "1房1廳",
-        "url": "https://rent.591.com.tw/21560226"
       }
     ]
   }
