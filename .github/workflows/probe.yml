@@ -1,0 +1,49 @@
+name: probe-591
+
+# 目的:驗證 GitHub Actions 執行環境能否正常存取 591 BFF API。
+# 依 ARCHITECTURE「排程資料源驗證」:接入前必須用與正式環境相同的環境實測。
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 測試 591 API(多種 UA)
+        run: |
+          URL="https://bff-house.591.com.tw/v3/web/rent/list?regionid=1&sectionid=9&rentprice=20000_25000&timestamp=$(date +%s000)"
+
+          echo "=== A) curl 預設 UA ==="
+          code=$(curl -s -o /tmp/a.json -w '%{http_code}' "$URL")
+          echo "HTTP $code"
+
+          sleep 2
+          echo "=== B) 誠實自我標示 UA ==="
+          code=$(curl -s -o /tmp/b.json -w '%{http_code}' -A 'rent_notice_bot/1.0' "$URL")
+          echo "HTTP $code"
+          if [ "$code" = "200" ]; then
+            echo "--- 解析結果 ---"
+            python3 -c "
+import json
+d = json.load(open('/tmp/b.json'))
+data = d.get('data') or {}
+items = data.get('items') or []
+print('data.total =', data.get('total'))
+print('items 筆數 =', len(items))
+if items:
+    it = items[0]
+    print('首筆:', it.get('id'), '|', it.get('address'), '|', it.get('price'), it.get('price_unit'))
+"
+          else
+            echo "--- 回應前 200 字 ---"
+            head -c 200 /tmp/b.json; echo
+          fi
+
+          sleep 2
+          echo "=== C) 對照組:模擬 GAS 的 UA(預期 403) ==="
+          code=$(curl -s -o /dev/null -w '%{http_code}' \
+            -A 'Mozilla/5.0 (compatible; Google-Apps-Script; beanserver; +https://script.google.com; id: TEST)' "$URL")
+          echo "HTTP $code"
+
+          echo "=== 執行環境資訊 ==="
+          echo "對外 IP 歸屬:"; curl -s https://ipinfo.io/org || true
