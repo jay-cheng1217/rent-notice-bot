@@ -44,7 +44,9 @@ jobs:
           jq -c '.queries[]' config/filters.json | while read -r q; do
             sig=$(echo "$q"     | jq -r '.sig')
             region=$(echo "$q"  | jq -r '.region_id')
-            section=$(echo "$q" | jq -r '.section_id // 0')
+            # section_id 可為多區(如 "1,9")、"0" 或空字串(= 整個縣市不指定)
+            section=$(echo "$q" | jq -r '.section_id // "" | tostring')
+            [ "$section" = "0" ] && section=""
             kind=$(echo "$q"    | jq -r '.kind_id // 0')
             price=$(echo "$q"   | jq -r '.price // ""')
 
@@ -52,7 +54,7 @@ jobs:
             # 最多 3 次,間隔遞增;同一次 run 內 IP 固定,重試針對的是暫時性限流
             for attempt in 1 2 3; do
               url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
-              [ "$section" != "0" ] && url="${url}&sectionid=${section}"
+              [ -n "$section" ] && url="${url}&sectionid=${section}"
               [ "$kind" != "0" ]    && url="${url}&kind=${kind}"
               [ -n "$price" ]       && url="${url}&rentprice=${price}"
 
