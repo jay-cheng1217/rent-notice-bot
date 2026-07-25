@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T08:58:23Z",
+  "generated_at": "2026-07-25T09:04:46Z",
   "results": {
     "1|9|0|20000_25000": [
       {
@@ -12,6 +12,8 @@
         "area_name": "7.4坪",
         "floor_name": "1F/5F",
         "layout": "",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img1.591.com.tw/house/2026/03/28/177469727915970406.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21682366"
       },
       {
@@ -24,6 +26,8 @@
         "area_name": "12坪",
         "floor_name": "2F/5F",
         "layout": "",
+        "refresh_time": "3小時內更新",
+        "photo": "https://img1.591.com.tw/house/2022/01/29/164344569222585306.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21695104"
       },
       {
@@ -36,7 +40,23 @@
         "area_name": "20坪",
         "floor_name": "4F/5F",
         "layout": "1房2廳",
+        "refresh_time": "5分鐘內更新",
+        "photo": "https://img1.591.com.tw/house/2026/05/13/177866930601588504.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21565255"
+      },
+      {
+        "id": "21683157",
+        "title": "近唭哩岸捷運⭐️兩房一廳⭐️陽台獨洗曬",
+        "price": "20,000",
+        "price_unit": "元/月",
+        "kind_name": "整層住家",
+        "address": "北投區-立農街一段349巷3弄",
+        "area_name": "16坪",
+        "floor_name": "頂樓加蓋/6F",
+        "layout": "2房1廳",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/22/178469706859667806.jpg!510x400.jpg",
+        "url": "https://rent.591.com.tw/21683157"
       },
       {
         "id": "21682404",
@@ -48,6 +68,8 @@
         "area_name": "8坪",
         "floor_name": "5F/6F",
         "layout": "1房1廳",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/22/178468637062059201.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21682404"
       },
       {
@@ -60,19 +82,9 @@
         "area_name": "19坪",
         "floor_name": "3F/6F",
         "layout": "",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img1.591.com.tw/house/2022/12/03/167004065494975093.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21654449"
-      },
-      {
-        "id": "21683157",
-        "title": "近唭哩岸捷運⭐️兩房一廳⭐️陽台獨洗曬",
-        "price": "20,000",
-        "price_unit": "元/月",
-        "kind_name": "整層住家",
-        "address": "北投區-立農街一段349巷3弄",
-        "area_name": "16坪",
-        "floor_name": "頂樓加蓋/6F",
-        "layout": "2房1廳",
-        "url": "https://rent.591.com.tw/21683157"
       },
       {
         "id": "21673593",
@@ -84,6 +96,8 @@
         "area_name": "11.3坪",
         "floor_name": "6F/12F",
         "layout": "",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/20/178454962160815603.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21673593"
       },
       {
@@ -96,6 +110,8 @@
         "area_name": "19坪",
         "floor_name": "4F/5F",
         "layout": "1房2廳",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/09/178356983229680704.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21464204"
       },
       {
@@ -108,6 +124,8 @@
         "area_name": "10坪",
         "floor_name": "5F/12F",
         "layout": "",
+        "refresh_time": "2小時內更新",
+        "photo": "https://img2.591.com.tw/house/2025/12/10/176534450651915604.jpg!fit.1000x.water2.jpg",
         "url": "https://rent.591.com.tw/21616254"
       },
       {
@@ -120,6 +138,8 @@
         "area_name": "14.2坪",
         "floor_name": "4F/4F",
         "layout": "",
+        "refresh_time": "23分鐘內更新",
+        "photo": "https://img2.591.com.tw/house/2024/08/19/172407250166294802.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21702708"
       },
       {
@@ -132,6 +152,8 @@
         "area_name": "15坪",
         "floor_name": "頂樓加蓋/3F",
         "layout": "",
+        "refresh_time": "41分鐘內更新",
+        "photo": "https://img1.591.com.tw/house/2024/05/09/171523857336645202.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21553121"
       },
       {
@@ -144,6 +166,8 @@
         "area_name": "19坪",
         "floor_name": "3F/6F",
         "layout": "",
+        "refresh_time": "4小時內更新",
+        "photo": "https://img2.591.com.tw/house/2022/12/03/167004065494975093.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21654467"
       },
       {
@@ -156,6 +180,8 @@
         "area_name": "26.2坪",
         "floor_name": "4F/5F",
         "layout": "3房2廳",
+        "refresh_time": "4小時內更新",
+        "photo": "https://img1.591.com.tw/house/2025/12/13/176560044773469201.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21601911"
       },
       {
@@ -168,6 +194,8 @@
         "area_name": "11.4坪",
         "floor_name": "6F/12F",
         "layout": "",
+        "refresh_time": "6小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/20/178453624151771402.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21622657"
       },
       {
@@ -180,6 +208,8 @@
         "area_name": "15坪",
         "floor_name": "3F/5F",
         "layout": "1房0廳",
+        "refresh_time": "7小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/06/08/178088990112247807.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21653492"
       },
       {
@@ -192,6 +222,8 @@
         "area_name": "8坪",
         "floor_name": "1F/4F",
         "layout": "",
+        "refresh_time": "7小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/20/178454205349518003.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21617868"
       },
       {
@@ -204,6 +236,8 @@
         "area_name": "18坪",
         "floor_name": "3F/4F",
         "layout": "3房1廳",
+        "refresh_time": "8小時內更新",
+        "photo": "https://img1.591.com.tw/house/2025/10/01/175929415709670001.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21651757"
       },
       {
@@ -216,6 +250,8 @@
         "area_name": "9坪",
         "floor_name": "5F/13F",
         "layout": "",
+        "refresh_time": "19小時內更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/18/178438442676318002.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21589897"
       },
       {
@@ -228,6 +264,8 @@
         "area_name": "8坪",
         "floor_name": "1F/5F",
         "layout": "",
+        "refresh_time": "20小時內更新",
+        "photo": "https://img1.591.com.tw/house/2026/07/06/178332902833609807.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21700179"
       },
       {
@@ -240,6 +278,8 @@
         "area_name": "17.6坪",
         "floor_name": "6F/7F",
         "layout": "2房2廳",
+        "refresh_time": "22小時內更新",
+        "photo": "https://img1.591.com.tw/house/2024/04/27/171418526906540603.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21674316"
       },
       {
@@ -252,6 +292,8 @@
         "area_name": "15.6坪",
         "floor_name": "4F/6F",
         "layout": "1房1廳",
+        "refresh_time": "昨日更新",
+        "photo": "https://img2.591.com.tw/house/2026/05/29/178005337687608006.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21482573"
       },
       {
@@ -264,6 +306,8 @@
         "area_name": "7坪",
         "floor_name": "1F/5F",
         "layout": "",
+        "refresh_time": "昨日更新",
+        "photo": "https://img1.591.com.tw/house/2026/05/06/177803639276743202.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21627245"
       },
       {
@@ -276,6 +320,8 @@
         "area_name": "12.7坪",
         "floor_name": "3F/5F",
         "layout": "1房0廳",
+        "refresh_time": "昨日更新",
+        "photo": "https://img1.591.com.tw/house/2025/12/29/176700243779336603.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/20412033"
       },
       {
@@ -288,6 +334,8 @@
         "area_name": "25坪",
         "floor_name": "頂樓加蓋/4F",
         "layout": "1房1廳",
+        "refresh_time": "昨日更新",
+        "photo": "https://img1.591.com.tw/house/2024/10/01/172775465104914409.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21546898"
       },
       {
@@ -300,6 +348,8 @@
         "area_name": "16坪",
         "floor_name": "頂樓加蓋/4F",
         "layout": "2房1廳",
+        "refresh_time": "昨日更新",
+        "photo": "https://img1.591.com.tw/house/2026/07/20/178453060925581504.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21671123"
       },
       {
@@ -312,6 +362,8 @@
         "area_name": "30坪",
         "floor_name": "頂樓加蓋/5F",
         "layout": "3房2廳",
+        "refresh_time": "3天前更新",
+        "photo": "https://img1.591.com.tw/house/2026/07/17/178425459554946105.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21653658"
       },
       {
@@ -324,6 +376,8 @@
         "area_name": "9.7坪",
         "floor_name": "9F/12F",
         "layout": "",
+        "refresh_time": "4天前更新",
+        "photo": "https://img1.591.com.tw/house/2026/07/08/178352154339750306.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21680833"
       },
       {
@@ -336,6 +390,8 @@
         "area_name": "9.7坪",
         "floor_name": "9F/12F",
         "layout": "",
+        "refresh_time": "4天前更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/08/178352154339750306.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21680627"
       },
       {
@@ -348,6 +404,8 @@
         "area_name": "11.8坪",
         "floor_name": "4F/5F",
         "layout": "",
+        "refresh_time": "5天前更新",
+        "photo": "https://img2.591.com.tw/house/2026/07/08/178344554022891903.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21569848"
       },
       {
@@ -360,6 +418,8 @@
         "area_name": "13坪",
         "floor_name": "6F/7F",
         "layout": "1房1廳",
+        "refresh_time": "5天前更新",
+        "photo": "https://img1.591.com.tw/house/2026/07/20/178454500463562007.jpg!510x400.jpg",
         "url": "https://rent.591.com.tw/21673178"
       }
     ]
