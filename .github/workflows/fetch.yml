@@ -1,0 +1,88 @@
+name: fetch-591
+
+# 每 15 分鐘讀 config/filters.json,對 591 抓取各組查詢條件的物件,
+# 結果寫入 data/listings.json 供 GAS 端讀取。
+#
+# 為何在 GitHub Actions 抓:591 以 UA 字串封鎖 Google Apps Script(GAS 無法改 UA),
+# 但一般客戶端正常回 200。本環境用 curl 預設 UA 即可,**不需任何繞過機制**。
+# (實測 2026-07-25:預設 UA 200 / GAS UA 403,見 ARCHITECTURE v2.0)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:        # GAS 可於使用者改條件時立即觸發
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-591
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 抓取 591
+        run: |
+          set -euo pipefail
+          mkdir -p data
+          if [ ! -f config/filters.json ]; then
+            echo "尚無 config/filters.json,略過"
+            exit 0
+          fi
+
+          echo '{"generated_at":"'"$(date -u +%Y-%m-%dT%H:%M:%SZ)"'","results":{}}' > /tmp/out.json
+
+          # 逐組查詢;每組之間間隔 3 秒,維持低頻
+          jq -c '.queries[]' config/filters.json | while read -r q; do
+            sig=$(echo "$q"        | jq -r '.sig')
+            region=$(echo "$q"     | jq -r '.region_id')
+            section=$(echo "$q"    | jq -r '.section_id // 0')
+            kind=$(echo "$q"       | jq -r '.kind_id // 0')
+            price=$(echo "$q"      | jq -r '.price // ""')
+
+            url="https://bff-house.591.com.tw/v3/web/rent/list?regionid=${region}&timestamp=$(date +%s)000"
+            [ "$section" != "0" ] && url="${url}&sectionid=${section}"
+            [ "$kind" != "0" ]    && url="${url}&kind=${kind}"
+            [ -n "$price" ]       && url="${url}&rentprice=${price}"
+
+            code=$(curl -s -o /tmp/resp.json -w '%{http_code}' "$url" || echo 000)
+            echo "query ${sig} -> HTTP ${code}"
+
+            if [ "$code" = "200" ]; then
+              jq --arg sig "$sig" --slurpfile resp /tmp/resp.json '
+                .results[$sig] = [
+                  ($resp[0].data.items // [])[] | {
+                    id: (.id|tostring), title: .title, price: .price,
+                    price_unit: .price_unit, kind_name: .kind_name,
+                    address: .address, area_name: .area_name,
+                    floor_name: .floor_name, layout: .layoutStr,
+                    url: (.url // ("https://rent.591.com.tw/" + (.id|tostring)))
+                  }
+                ]' /tmp/out.json > /tmp/out2.json && mv /tmp/out2.json /tmp/out.json
+            else
+              # 失敗不覆寫該組資料,讓 GAS 端看得出這輪沒更新
+              jq --arg sig "$sig" '.errors[$sig] = "HTTP '"$code"'"' /tmp/out.json > /tmp/out2.json && mv /tmp/out2.json /tmp/out.json
+            fi
+            sleep 3
+          done
+
+          mv /tmp/out.json data/listings.json
+          echo "--- 摘要 ---"
+          jq '{generated_at, queries: (.results|keys), counts: (.results|map_values(length)), errors}' data/listings.json
+
+      - name: 提交結果
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/listings.json
+          if git diff --staged --quiet; then
+            echo "無變動"
+          else
+            git commit -m "data: 更新 591 物件快照 [skip ci]"
+            git push
+          fi
