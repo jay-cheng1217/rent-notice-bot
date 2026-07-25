@@ -1,12 +1,7 @@
 {
-  "updated_at": "2026-07-25T12:48:14.434Z",
+  "updated_at": "2026-07-25T13:00:00Z",
   "queries": [
-    {
-      "sig": "1|8,9|0|12000_23000",
-      "region_id": 1,
-      "section_id": "8,9",
-      "kind_id": 0,
-      "price": "12000_23000"
-    }
+    { "sig": "1|1,9|2|18000_26000", "region_id": 1, "section_id": "1,9", "kind_id": 2, "price": "18000_26000" },
+    { "sig": "1|1,9|4|18000_26000", "region_id": 1, "section_id": "1,9", "kind_id": 4, "price": "18000_26000" }
   ]
 }
