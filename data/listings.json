@@ -1273,8 +1273,8 @@
         "layout": "",
         "refresh_time": "3天前更新",
         "photos": [
-          "https://img2.591.com.tw/house/2026/08/06/178599619950665508.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/08/06/178599619943842901.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/06/178599619950665508.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178599619943842901.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/08/06/178599619952307405.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/08/06/178599619947134401.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/08/06/178599619946167409.jpg!510x400.jpg",
@@ -1299,7 +1299,7 @@
           "https://img1.591.com.tw/house/2026/08/06/178600763257440807.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/08/06/178600763257015605.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/08/06/178600763254236504.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/08/06/178600763488414701.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2026/08/06/178600763488414701.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21781951"
       },
@@ -1400,11 +1400,11 @@
         "refresh_time": "2小時內更新",
         "photos": [
           "https://img1.591.com.tw/house/2022/02/24/164567838445332054.jpeg!510x400.jpeg",
-          "https://img2.591.com.tw/house/2022/02/24/164567838456258778.jpeg!510x400.jpeg",
+          "https://img1.591.com.tw/house/2022/02/24/164567838456258778.jpeg!510x400.jpeg",
           "https://img2.591.com.tw/house/2021/09/10/163126749067154146.jpeg!510x400.jpeg",
           "https://img2.591.com.tw/house/2021/09/10/163126749104351792.jpeg!510x400.jpeg",
           "https://img1.591.com.tw/house/2021/09/10/163126749140730132.jpeg!510x400.jpeg",
-          "https://img1.591.com.tw/house/2025/02/20/174003625562157501.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2025/02/20/174003625562157501.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21794649"
       },
@@ -1672,7 +1672,7 @@
           "https://img1.591.com.tw/house/2025/06/17/175016565954432007.png!510x400.png",
           "https://img1.591.com.tw/house/2025/06/17/175016565962719908.png!510x400.png",
           "https://img2.591.com.tw/house/2025/06/17/175016565974924601.png!510x400.png",
-          "https://img2.591.com.tw/house/2025/06/17/175016565978545408.png!510x400.png"
+          "https://img1.591.com.tw/house/2025/06/17/175016565978545408.png!510x400.png"
         ],
         "url": "https://rent.591.com.tw/21684278"
       },
@@ -1735,7 +1735,7 @@
           "https://img1.591.com.tw/house/2026/05/04/177787717283135803.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/05/04/177787717289960103.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/05/04/177787717283489105.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2026/05/04/177787717420755205.jpg!510x400.jpg"
+          "https://img1.591.com.tw/house/2026/05/04/177787717420755205.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21187348"
       },
@@ -2163,7 +2163,7 @@
         "kind_name": "獨立套房",
         "address": "北投區-大業路",
         "area_name": "8坪",
-        "floor_name": "2F/4F",
+        "floor_name": "3F/5F",
         "layout": "",
         "refresh_time": "3小時內更新",
         "photos": [
@@ -2174,7 +2174,49 @@
           "https://img1.591.com.tw/house/2025/12/01/176458551918779602.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2025/12/01/176458552238701103.jpg!510x400.jpg"
         ],
-        "url": "https://rent.591.com.tw/21705937"
+        "url": "https://rent.591.com.tw/21793954"
+      },
+      {
+        "id": "21729174",
+        "title": "新北投捷運6分鐘｜9坪大套房｜三面採光｜獨立出入口｜家具齊全",
+        "price": "14,500",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-中和街",
+        "area_name": "9坪",
+        "floor_name": "頂樓加蓋/6F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2026/07/31/178549127689529107.jpg!fit.1000x.water2.jpg",
+          "https://img1.591.com.tw/house/2026/07/29/178532775597402501.png!510x400.png",
+          "https://img1.591.com.tw/house/2026/07/29/178532775554024201.png!510x400.png",
+          "https://img2.591.com.tw/house/2026/07/29/178532775674234303.png!510x400.png",
+          "https://img2.591.com.tw/house/2026/07/29/178532775786443707.png!510x400.png",
+          "https://img2.591.com.tw/house/2026/07/29/178532775624838000.png!510x400.png"
+        ],
+        "url": "https://rent.591.com.tw/21729174"
+      },
+      {
+        "id": "21778309",
+        "title": "全新裝潢*可雙租補*可寵*台電計價",
+        "price": "20,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-明德路118巷",
+        "area_name": "8坪",
+        "floor_name": "1F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2026/08/06/178597869162915701.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178597869168488802.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/06/178597869197945702.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178597869196062900.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178597869196183906.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178597869198120808.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21778309"
       },
       {
         "id": "21779539",
@@ -2277,6 +2319,271 @@
         "url": "https://rent.591.com.tw/21687950"
       },
       {
+        "id": "21779539",
+        "title": "可租補士林捷運站優質套房環境安靜",
+        "price": "12,500",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-福德路57巷3號",
+        "area_name": "7.7坪",
+        "floor_name": "2F/2F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2026/08/06/178598487553106801.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/06/178598488040083503.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/06/178598488299142509.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2021/03/05/161492549871188509.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2021/03/05/161492547957808007.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2021/03/05/161492547800491506.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21779539"
+      },
+      {
+        "id": "21759051",
+        "title": "❤️劍潭站🔸貓咪友善🔸垃圾代收🔸獨立洗衣機",
+        "price": "17,500",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-承德路四段",
+        "area_name": "10坪",
+        "floor_name": "頂樓加蓋/11F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2026/08/03/178574307179811105.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/03/178574307188454207.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178574307181002107.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178574307189216109.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178574307181381301.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178574307353659400.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21759051"
+      },
+      {
+        "id": "21666145",
+        "title": "捷運便利套房/可租金補貼報稅",
+        "price": "19,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-福壽街79號",
+        "area_name": "8坪",
+        "floor_name": "3F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2019/02/02/154908917235657908.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/02/02/154908917271906603.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2019/02/02/154908917300651806.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/02/02/154908917328328501.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2019/02/02/154908917366587709.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/02/02/154908951730251409.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21666145"
+      },
+      {
+        "id": "21705937",
+        "title": "💓新北投捷運/無採光無窗戶/可養貓咪/可租補/短租可談",
+        "price": "12,500",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-大業路",
+        "area_name": "8坪",
+        "floor_name": "2F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2025/12/01/176458551919371306.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/12/01/176458551912516504.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/12/01/176458551914594101.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/12/01/176458551912868701.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/12/01/176458551918779602.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/12/01/176458552238701103.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21705937"
+      },
+      {
+        "id": "21735797",
+        "title": "六樓獨立套房",
+        "price": "18,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-德行東路190巷30弄",
+        "area_name": "15坪",
+        "floor_name": "頂樓加蓋/5F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2026/07/30/178541552961488305.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/03/03/155161084708027601.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/03/03/155161084805533506.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2019/03/03/155161084842193300.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2019/03/03/155161084878534607.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/07/30/178541552965107106.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21735797"
+      },
+      {
+        "id": "21714087",
+        "title": "近文化大學、警察局一學年15萬",
+        "price": "15,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-格致路20巷",
+        "area_name": "9坪",
+        "floor_name": "6F/9F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2026/06/27/178253377243430300.jpeg!510x400.jpeg",
+          "https://img2.591.com.tw/house/2026/06/27/178253377227559905.jpeg!510x400.jpeg",
+          "https://img1.591.com.tw/house/2026/06/27/178253377240900202.jpeg!510x400.jpeg",
+          "https://img1.591.com.tw/house/2026/06/27/178253377246548006.jpeg!510x400.jpeg"
+        ],
+        "url": "https://rent.591.com.tw/21714087"
+      },
+      {
+        "id": "21755572",
+        "title": "📢舒適大套房✅近北護大/榮總/石牌捷運",
+        "price": "14,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-明德路337巷13號",
+        "area_name": "7坪",
+        "floor_name": "4F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2026/08/03/178572366804591109.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178572366807505209.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178572366831944908.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/03/178572366811592606.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/03/178572366809064702.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21755572"
+      },
+      {
+        "id": "21741080",
+        "title": "石牌捷運|鬧中取靜|採光超好",
+        "price": "22,800",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "北投區-裕民六路90巷1弄10號",
+        "area_name": "9坪",
+        "floor_name": "2F/2F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2024/05/15/171577398721454201.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/01/178554620022983305.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/01/178554620036259305.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/01/178554620042122209.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/01/178554620045796201.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/01/178554620040814506.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21741080"
+      },
+      {
+        "id": "21780847",
+        "title": "※仲介勿擾※　近圓山、士林捷運站、文化、大同、東吳大學",
+        "price": "13,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-延平北路五段83巷",
+        "area_name": "6坪",
+        "floor_name": "1F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2026/01/10/176802120106893505.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/01/10/176802120092260501.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/01/10/176802120103522009.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/01/10/176802120117930505.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/01/10/176802120125464804.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21780847"
+      },
+      {
+        "id": "21730640",
+        "title": "朵爾學生套房｜單雙人電梯套房・文化大學",
+        "price": "15,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-建業路11巷",
+        "area_name": "5坪",
+        "floor_name": "4F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2024/06/13/171824597197629008.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2024/08/28/172483760929962805.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2024/06/13/171824604956384709.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2024/06/13/171824608143451401.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2024/06/13/171824612251821908.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2024/06/13/171824619644633602.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21730640"
+      },
+      {
+        "id": "21728881",
+        "title": "大坪數套房_全新傢俱齊全_不怕你來只怕你沒來！",
+        "price": "22,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-社中街374號",
+        "area_name": "10坪",
+        "floor_name": "3F/3F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2025/08/20/175566783995276509.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/20/175566784004821808.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/20/175566783995372700.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/20/175566783995148408.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/08/20/175566783999054305.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/20/175566784164756103.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21728881"
+      },
+      {
+        "id": "21671671",
+        "title": "士林超優套房，近百齡橋，交通方便",
+        "price": "12,000",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-大南路428巷",
+        "area_name": "6坪",
+        "floor_name": "2F/4F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img1.591.com.tw/house/2026/07/20/178453370312210302.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/07/20/178453370308251001.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21671671"
+      },
+      {
+        "id": "21624843",
+        "title": "簡約設計雙人大套房(有對外窗)",
+        "price": "13,900",
+        "price_unit": "元/月",
+        "kind_name": "獨立套房",
+        "address": "士林區-大南路398號",
+        "area_name": "8坪",
+        "floor_name": "6F/6F",
+        "layout": "",
+        "refresh_time": "3小時內更新",
+        "photos": [
+          "https://img2.591.com.tw/house/2025/08/09/175471067707986508.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/09/175471069529297206.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/08/09/175471068362041502.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/08/09/175471072753800802.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/08/09/175471073999351509.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/07/13/178391285586740905.jpg!510x400.jpg"
+        ],
+        "url": "https://rent.591.com.tw/21624843"
+      },
+      {
         "id": "21731812",
         "title": "靜巷住宅採光好*可租補*低樓層*台電計費*獨立陽台",
         "price": "18,500",
@@ -2288,11 +2595,11 @@
         "layout": "",
         "refresh_time": "3小時內更新",
         "photos": [
-          "https://img1.591.com.tw/house/2025/06/13/174978637476761101.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2025/06/13/174978637476761101.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2025/06/13/174978637452592805.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2025/06/13/174978637461024700.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2025/06/13/174978637469234404.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2025/06/13/174978637493155405.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2025/06/13/174978637493155405.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2025/06/13/174978637507315707.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21731812"
@@ -2374,8 +2681,8 @@
           "https://img2.591.com.tw/house/2026/08/08/178617362294354400.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/08/08/178617362292666805.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2021/11/29/163815011502686505.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2021/11/29/163815011527451903.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2021/11/01/163576835382453003.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2021/11/29/163815011527451903.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2021/11/01/163576835382453003.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2021/11/01/163576835110790101.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21708929"
@@ -2893,7 +3200,7 @@
         "layout": "",
         "refresh_time": "57分鐘內更新",
         "photos": [
-          "https://img1.591.com.tw/house/2026/07/13/178393084108833200.jpg!fit.1000x.water2.jpg",
+          "https://img2.591.com.tw/house/2026/07/13/178393084108833200.jpg!fit.1000x.water2.jpg",
           "https://img2.591.com.tw/house/2026/07/13/178393034527078802.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/07/13/178393034523763101.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/07/13/178393034500679608.jpg!510x400.jpg",
@@ -2956,7 +3263,7 @@
         "layout": "",
         "refresh_time": "4小時內更新",
         "photos": [
-          "https://img2.591.com.tw/house/2026/07/07/178340289080013702.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/07/07/178340289080013702.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/07/07/178340289078257906.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/07/07/178340289077057009.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/07/07/178340289080505300.jpg!510x400.jpg",
@@ -3037,7 +3344,7 @@
         "layout": "",
         "refresh_time": "5小時內更新",
         "photos": [
-          "https://img1.591.com.tw/house/2026/07/05/178322638766695700.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/07/05/178322638766695700.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2022/02/02/164379169969844993.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2022/04/11/164967726260997206.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/07/05/178322652719441702.jpg!510x400.jpg",
@@ -3058,7 +3365,7 @@
         "layout": "",
         "refresh_time": "6小時內更新",
         "photos": [
-          "https://img1.591.com.tw/house/2024/05/09/171523857336645202.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2024/05/09/171523857336645202.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2024/05/09/171523857334889209.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2024/05/09/171523857333553200.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2024/05/09/171523857338302709.jpg!510x400.jpg",
@@ -3104,8 +3411,8 @@
           "https://img1.591.com.tw/house/2026/07/03/178304868752407008.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/07/03/178304868751628109.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2026/07/03/178304868762472803.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/07/03/178304868742323905.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2026/07/03/178304868731632308.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2026/07/03/178304868742323905.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/07/03/178304868731632308.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21741906"
       },
@@ -3122,10 +3429,10 @@
         "refresh_time": "7小時內更新",
         "photos": [
           "https://img1.591.com.tw/house/2026/08/03/178574675176959600.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2026/08/03/178574675180621507.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/08/03/178574675166131006.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/03/178574675180621507.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2026/08/03/178574675166131006.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/08/03/178574675177074702.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2026/08/03/178574675161452709.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/08/03/178574675161452709.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/08/03/178574675189562904.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21759721"
@@ -3290,7 +3597,7 @@
           "https://img1.591.com.tw/house/2022/12/03/167004065424665858.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2022/12/03/167004065478137067.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2022/12/03/167004065486782979.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2022/12/03/167004065440698082.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2022/12/03/167004065440698082.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2022/12/03/167004065452940025.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21654467"
@@ -3307,7 +3614,7 @@
         "layout": "",
         "refresh_time": "昨日更新",
         "photos": [
-          "https://img1.591.com.tw/house/2025/06/19/175030741491272903.jpg!1000x.water2.jpg",
+          "https://img2.591.com.tw/house/2025/06/19/175030741491272903.jpg!1000x.water2.jpg",
           "https://img2.591.com.tw/house/2025/06/19/175030726087809303.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2025/06/19/175030726085806403.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2025/06/19/175030726083148703.jpg!510x400.jpg",
@@ -3330,10 +3637,10 @@
         "photos": [
           "https://img2.591.com.tw/house/2023/03/27/167990006578609406.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2023/03/27/167990920641803209.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2023/03/27/167990006583807700.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2023/03/27/167990006583807700.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2023/03/27/167990920637945401.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2023/03/27/167990006623027706.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2023/03/27/167990006658469905.jpg!510x400.jpg"
+          "https://img1.591.com.tw/house/2023/03/27/167990006623027706.jpg!510x400.jpg",
+          "https://img2.591.com.tw/house/2023/03/27/167990006658469905.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21779336"
       },
@@ -3373,7 +3680,7 @@
           "https://img1.591.com.tw/house/2026/06/29/178271547160140608.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/06/29/178271547157249502.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/06/29/178271547152737707.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/06/29/178271547158849007.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2026/06/29/178271547158849007.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21774294"
       },
@@ -3600,7 +3907,7 @@
           "https://img2.591.com.tw/house/2026/06/30/178283035273256108.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/06/30/178283035275561300.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/06/30/178283035280699205.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/06/30/178283035284320109.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2026/06/30/178283035284320109.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21763636"
       },
@@ -3637,10 +3944,10 @@
         "layout": "",
         "refresh_time": "5天前更新",
         "photos": [
-          "https://img2.591.com.tw/house/2026/06/25/178236549921573000.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2026/06/25/178236549919098104.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/06/25/178236549921573000.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2026/06/25/178236549919098104.jpg!510x400.jpg",
           "https://img1.591.com.tw/house/2026/06/25/178236549920355102.jpg!510x400.jpg",
-          "https://img1.591.com.tw/house/2026/06/25/178236549911437406.jpg!510x400.jpg"
+          "https://img2.591.com.tw/house/2026/06/25/178236549911437406.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21611561"
       },
@@ -3678,9 +3985,9 @@
         "refresh_time": "6天前更新",
         "photos": [
           "https://img1.591.com.tw/house/2024/11/19/173198534479016402.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2024/11/19/173198534481901803.jpg!510x400.jpg",
+          "https://img1.591.com.tw/house/2024/11/19/173198534481901803.jpg!510x400.jpg",
           "https://img2.591.com.tw/house/2024/11/19/173198534486416207.jpg!510x400.jpg",
-          "https://img2.591.com.tw/house/2024/11/19/173198534479164209.jpg!510x400.jpg"
+          "https://img1.591.com.tw/house/2024/11/19/173198534479164209.jpg!510x400.jpg"
         ],
         "url": "https://rent.591.com.tw/21754277"
       },
@@ -3717,8 +4024,8 @@
         "layout": "",
         "refresh_time": "8天前更新",
         "photos": [
-          "https://img2.591.com.tw/house/2026/08/01/178557402902656309.jpeg!510x400.jpeg",
-          "https://img2.591.com.tw/house/2026/08/01/178557402904464604.jpeg!510x400.jpeg",
+          "https://img1.591.com.tw/house/2026/08/01/178557402902656309.jpeg!510x400.jpeg",
+          "https://img1.591.com.tw/house/2026/08/01/178557402904464604.jpeg!510x400.jpeg",
           "https://img2.591.com.tw/house/2026/08/01/178557402907732106.jpeg!510x400.jpeg",
           "https://img1.591.com.tw/house/2026/08/01/178557402913180900.jpeg!510x400.jpeg"
         ],
@@ -3947,9 +4254,6 @@
       "21635898",
       "21621337",
       "21646485",
-      "21635859",
-      "21635942",
-      "21787742",
       "21787650",
       "21714597",
       "21787408",
@@ -3977,17 +4281,17 @@
       "21733686",
       "21751860",
       "21767622",
-      "21767303",
       "21657172",
+      "21767303",
       "21698593",
       "21716040",
       "21716170",
       "21757812",
       "21745201",
       "21751093",
-      "21751837",
       "21751154",
       "21746829",
+      "21751837",
       "21782672",
       "21783992",
       "21782380",
@@ -4080,7 +4384,6 @@
       "21750758",
       "21778544",
       "21778172",
-      "21776104",
       "21729351",
       "21765264",
       "21763636",
@@ -4107,5 +4410,7 @@
       "21633196"
     ]
   },
-  "stale": {}
+  "stale": {
+    "1|8,9|1|12000_23000": true
+  }
 }
